@@ -60,7 +60,7 @@ RETURN INTEGER
 AS
 nbStagiaires INTEGER;
 BEGIN
-SELECT COUNT(*)/(to_number(to_char(sysdate, 'yyyy')) - (to_number(to_char(sysdate, 'yyyy')) - ann)) INTO nbStagiaires
+SELECT COUNT(*)/ann INTO nbStagiaires
 FROM ob_etudiant E
 WHERE StageTrouve = 1
 AND Annee >= to_number(to_char(sysdate, 'yyyy')) + 1 - ann;
